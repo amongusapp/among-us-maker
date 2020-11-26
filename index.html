@@ -1,0 +1,554 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <script data-ad-client="ca-pub-2098551902383094" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Among Us Avatar Maker</title>
+</head>
+
+<script src="jquery-2.1.4.min.js"></script>
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<link href="css/prism.css" rel="stylesheet" />
+
+<script src="css/bootstrap.min.js"></script>
+<script src="css/prism.js"></script>
+
+<script src="Cubexy.js"></script>
+<style>
+    .btn-lg {
+        box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn3d, .btn3d:focus {
+        position: relative;
+        top: -6px;
+        border: 0;
+        outline: medium none;
+        transition: all 0.04s linear;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+
+        .btn3d:active, .btn3d.active {
+            top: 2px;
+        }
+
+        .btn3d.btn-white {
+            color: #666666;
+            box-shadow: 0 0 0 1px #ebebeb inset, 0 0 0 2px rgba(255,255,255,0.10) inset, 0 8px 0 0 #f5f5f5, 0 8px 8px 1px rgba(0,0,0,.2);
+            background-color: #fff;
+        }
+
+            .btn3d.btn-white:active, .btn3d.btn-white.active {
+                color: #666666;
+                box-shadow: 0 0 0 1px #ebebeb inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,.1);
+                background-color: #fff;
+            }
+
+        .btn3d.btn-default {
+            color: #666666;
+            box-shadow: 0 0 0 1px #ebebeb inset, 0 0 0 2px rgba(255,255,255,0.10) inset, 0 8px 0 0 #BEBEBE, 0 8px 8px 1px rgba(0,0,0,.2);
+            background-color: #f9f9f9;
+        }
+
+            .btn3d.btn-default:active, .btn3d.btn-default.active {
+                color: #666666;
+                box-shadow: 0 0 0 1px #ebebeb inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,.1);
+                background-color: #f9f9f9;
+            }
+
+        .btn3d.btn-primary {
+            box-shadow: 0 0 0 1px #417fbd inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #4D5BBE, 0 8px 8px 1px rgba(0,0,0,0.5);
+            background-color: #4274D7;
+        }
+
+            .btn3d.btn-primary:active, .btn3d.btn-primary.active {
+                box-shadow: 0 0 0 1px #417fbd inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+                background-color: #4274D7;
+            }
+
+        .btn3d.btn-success {
+            box-shadow: 0 0 0 1px #31c300 inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #5eb924, 0 8px 8px 1px rgba(0,0,0,0.5);
+            background-color: #78d739;
+        }
+
+            .btn3d.btn-success:active, .btn3d.btn-success.active {
+                box-shadow: 0 0 0 1px #30cd00 inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+                background-color: #78d739;
+            }
+
+        .btn3d.btn-info {
+            box-shadow: 0 0 0 1px #00a5c3 inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #348FD2, 0 8px 8px 1px rgba(0,0,0,0.5);
+            background-color: #39B3D7;
+        }
+
+            .btn3d.btn-info:active, .btn3d.btn-info.active {
+                box-shadow: 0 0 0 1px #00a5c3 inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+                background-color: #39B3D7;
+            }
+
+        .btn3d.btn-warning {
+            box-shadow: 0 0 0 1px #d79a47 inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #D79A34, 0 8px 8px 1px rgba(0,0,0,0.5);
+            background-color: #FEAF20;
+        }
+
+            .btn3d.btn-warning:active, .btn3d.btn-warning.active {
+                box-shadow: 0 0 0 1px #d79a47 inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+                background-color: #FEAF20;
+            }
+
+        .btn3d.btn-danger {
+            box-shadow: 0 0 0 1px #b93802 inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #AA0000, 0 8px 8px 1px rgba(0,0,0,0.5);
+            background-color: #D73814;
+        }
+
+            .btn3d.btn-danger:active, .btn3d.btn-danger.active {
+                box-shadow: 0 0 0 1px #b93802 inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+                background-color: #D73814;
+            }
+
+        .btn3d.btn-magick {
+            color: #fff;
+            box-shadow: 0 0 0 1px #9a00cd inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #9823d5, 0 8px 8px 1px rgba(0,0,0,0.5);
+            background-color: #bb39d7;
+        }
+
+            .btn3d.btn-magick:active, .btn3d.btn-magick.active {
+                box-shadow: 0 0 0 1px #9a00cd inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+                background-color: #bb39d7;
+            }
+</style>
+
+
+<body background="./Assets/BG/SPACE.png" oncontextmenu="return false" onkeydown="return false">
+    <style>
+        #avatar img {
+            width: 100px
+        }
+
+            #avatar img:hover {
+                border: #4bf707 2px outset;
+                margin: 3px;
+                background-color: #4bf707;
+            }
+
+        #menu img {
+            width: 90px
+        }
+
+            #menu img:hover {
+                border: #4bf707 2px outset;
+                background-color: #4bf707;
+            }
+
+        #menu .tab-activo {
+            border: #4bf707 4px outset;
+        }
+
+        #canvas {
+            border: #ffffff 4px outset;
+        }
+
+        @font-face {
+            font-family: 'VCR OSD Mono';
+            src: url('./fonts/Fuente.ttf');
+            font-style: normal;
+        }
+
+        h1 {
+            font-family: 'VCR OSD Mono';
+            font-size: 15px;
+        }
+    </style>
+    <div class="container">
+
+
+        <!--
+
+        <div align=center>
+            <img align=center src="Assets/BG/amonguslogo.png">
+        </div>
+
+        -->
+
+
+        <div class="row">
+
+            <div class="col-md-9 text-center">
+
+
+                <canvas width="600" height="600" id="canvas">No Canvas support</canvas>
+            </div>
+
+
+
+            <!--
+            <div align=center>
+
+                <br><br><a id="Descargar">
+                <img onmouseout="this.src='./Assets/BG/DOWNLOAD.png';" onmouseover="this.src='./Assets/BG/DOWNLOAD2.png';" 
+                     src="./Assets/BG/DOWNLOAD.png">
+                </span>
+                    </a>&nbsp;
+                <br><br>
+            </div>
+
+            -->
+
+
+
+            <div class="col-md-8">
+
+
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="panel panel-success" align=center>
+        <div class="panel-heading" align=center; style="background-image:none;background: #c0c0c0;">
+
+            <div id="menu">
+                <img class="img-thumbnail" src="./Assets/BOTONES/FONDO.png" data-tab='FONDO' />
+                <img class="img-thumbnail" src="./Assets/BOTONES/PLAYER.png" data-tab='PLAYER' />
+                <img class="img-thumbnail" src="./Assets/BOTONES/HAT.png" data-tab='HATS' />
+                <img class="img-thumbnail" src="./Assets/BOTONES/COSTUME.png" data-tab='COSTUME' />
+                <img class="img-thumbnail" src="./Assets/BOTONES/PET.png" data-tab='PET' />
+                <img class="img-thumbnail" src="./Assets/BOTONES/VOTE.png" data-tab='VOTE' />
+
+            </div>
+        </div>
+        <div class="panel-body">
+            <div id="avatar">
+
+                <div id="FONDO" align=left>
+
+                    <img class="img-thumbnail" src="./Assets/BG/OUTERSPACE.png" />
+                 
+
+                    <img class="img-thumbnail" src="./Assets/BG/1.png" />
+                    <img class="img-thumbnail" src="./Assets/BG/2.png" />
+                    <img class="img-thumbnail" src="./Assets/BG/3.png" />
+                    <img class="img-thumbnail" src="./Assets/BG/4.png" />
+                    <img class="img-thumbnail" src="./Assets/BG/5.png" />
+                    <img class="img-thumbnail" src="./Assets/BG/6.png" />
+                    <img class="img-thumbnail" src="./Assets/BG/7.png" />
+                    <img class="img-thumbnail" src="./Assets/BG/8.png" />
+                    <img class="img-thumbnail" src="./Assets/BG/9.png" />
+                    <img class="img-thumbnail" src="./Assets/BG/10.png" />
+
+
+
+                    <img class="img-thumbnail" src="./Assets/BG/PORTAL SPACE.png" />
+                    <img class="img-thumbnail" src="./Assets/BG/PORTAL.png" />
+
+
+
+
+                </div>
+
+                <div id="PLAYER" align=left>
+
+                    <img class="img-thumbnail" src="./Assets/PLAYER/BASE.png" />
+                    <img class="img-thumbnail" src="./Assets/PLAYER/BLACK.png" />
+                    <img class="img-thumbnail" src="./Assets/PLAYER/BLUE.png" />
+                    <img class="img-thumbnail" src="./Assets/PLAYER/BROWN.png" />
+                    <img class="img-thumbnail" src="./Assets/PLAYER/CYAN.png" />
+                    <img class="img-thumbnail" src="./Assets/PLAYER/DARKGREEN.png" />
+                    <img class="img-thumbnail" src="./Assets/PLAYER/GREEN.png" />
+                    <img class="img-thumbnail" src="./Assets/PLAYER/ORANGE.png" />
+                    <img class="img-thumbnail" src="./Assets/PLAYER/PINK.png" />
+                    <img class="img-thumbnail" src="./Assets/PLAYER/PURPLE.png" />
+                    <img class="img-thumbnail" src="./Assets/PLAYER/RED.png" />
+                    <img class="img-thumbnail" src="./Assets/PLAYER/WHITE.png" />
+                    <img class="img-thumbnail" src="./Assets/PLAYER/YELLOW.png" />
+
+                </div>
+                <div id="HATS" align=left>
+
+                    <img class="img-thumbnail" src="./Assets/BG/BASE.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/ALIEN.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/ANTHENA.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/ASTRO.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/BALLOON1.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/BALLOON2.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/BALLOON3.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/BALLOON4.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/BALLOON5.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/BALLOON6.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/BALLOON7.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/BALLOON8.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/BALLOON9.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/BALLOON10.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/BALLOON11.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/BALLOON12.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/BANANA.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/BANDANA.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/BEANIE.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/BEAR.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/BERET.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/BIRTHDAY.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/BLACK.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/BROWS.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/CAP.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/CAPTAIN.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/CHEESE.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/CHEF.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/CHERRY.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/COP.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/COWBOY.png" />
+
+                    <img class="img-thumbnail" src="./Assets/HATS/CREWMATE.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/CREWMATE2.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/CREWMATE3.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/CREWMATE4.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/CREWMATE5.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/CREWMATE6.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/CREWMATE7.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/CREWMATE8.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/CREWMATE9.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/CREWMATE10.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/CREWMATE11.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/CREWMATE12.png" />
+
+                    <img class="img-thumbnail" src="./Assets/HATS/CROWN.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/DOCTOR.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/DOUBLE.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/DRAIN.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/EGG.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/ELMER.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/EYE.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/FEZ.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/FLAMINGO.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/FLOWER.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/FLOWERPOT.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/FREEZE.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/GASMASK.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/GOGGLES.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/GOGGLES2.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/GREEN.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/HALO.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/HEADBAND.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/HEADPHONES.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/HELMET.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/HORNS.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/LINK.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/MASK.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/MILITARY.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/MINER.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/NEST.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/NINJA.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/PAPER.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/PAPERHAT.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/PARTY.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/PILOT.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/PLANT.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/POLICE.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/POMPADOUR.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/POSTIT.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/SAFARI.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/SECURITY.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/SHERIFF.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/SIGN.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/SNORKEL.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/SNOW.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/SOLDIER.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/STICKMAN.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/STPATRICK.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/SUNGLASSES.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/TOPHAT.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/TOWEL.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/USHANKA.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/VIKING.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/WHITEHAT.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/WILDWEST.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/WINTER.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/WORKER.png" />
+
+                    <img class="img-thumbnail" src="./Assets/HATS/HAWK.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/CAT.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/PIRATE.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/CUERVO.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/WOLF.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/WITCH.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/BAG.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/BAT.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/JASON.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/KNIFE.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/DEVIL.png" />
+
+                    <img class="img-thumbnail" src="./Assets/HATS/SANTA.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/RENO.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/XMAS.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/SNOWMAN.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/CANE.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/PRESENT.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/LIGHTS.png" />
+
+                    <img class="img-thumbnail" src="./Assets/HATS/ALICE.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/MADHATTER.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/REDQUEEN.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/WHITERABBIT.png" />
+
+                    <img class="img-thumbnail" src="./Assets/HATS/HERCULES.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/MEGARA.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/HADES.png" />
+
+                    <img class="img-thumbnail" src="./Assets/HATS/RICK.png" />
+                    <img class="img-thumbnail" src="./Assets/HATS/MORTY.png" />
+
+
+                </div>
+
+
+
+                <div id="COSTUME" align=left>
+
+                    <img class="img-thumbnail" src="./Assets/BG/BASE.png" />
+                    <img class="img-thumbnail" src="./Assets/OUTFITS/ASTRO.png" />
+                    <img class="img-thumbnail" src="./Assets/OUTFITS/POLICE.png" />
+                    <img class="img-thumbnail" src="./Assets/OUTFITS/BLACKSUIT.png" />
+                    <img class="img-thumbnail" src="./Assets/OUTFITS/CAPTAIN.png" />
+                    <img class="img-thumbnail" src="./Assets/OUTFITS/DOCTOR.png" />
+                    <img class="img-thumbnail" src="./Assets/OUTFITS/EXPLORER.png" />
+                    <img class="img-thumbnail" src="./Assets/OUTFITS/JACKET.png" />
+                    <img class="img-thumbnail" src="./Assets/OUTFITS/LATEX.png" />
+                    <img class="img-thumbnail" src="./Assets/OUTFITS/MECHANIC.png" />
+                    <img class="img-thumbnail" src="./Assets/OUTFITS/MILITARY.png" />
+                    <img class="img-thumbnail" src="./Assets/OUTFITS/MINER.png" />
+                    <img class="img-thumbnail" src="./Assets/OUTFITS/SECURITY.png" />
+                    <img class="img-thumbnail" src="./Assets/OUTFITS/WHITESUIT.png" />
+                    <img class="img-thumbnail" src="./Assets/OUTFITS/WINTER.png" />
+                    <img class="img-thumbnail" src="./Assets/OUTFITS/WORKER.png" />
+
+                    <img class="img-thumbnail" src="./Assets/OUTFITS/BALLERINA.png" />
+                    <img class="img-thumbnail" src="./Assets/OUTFITS/BALLERINAazul.png" />
+                    <img class="img-thumbnail" src="./Assets/OUTFITS/BALLERINAmorada.png" />
+
+                    <img class="img-thumbnail" src="./Assets/OUTFITS/HEARTS.png" />
+
+                    <img class="img-thumbnail" src="./Assets/OUTFITS/ALICE.png" />
+                    <img class="img-thumbnail" src="./Assets/OUTFITS/MADHATTER.png" />
+                    <img class="img-thumbnail" src="./Assets/OUTFITS/REDQUEEN.png" />
+                    <img class="img-thumbnail" src="./Assets/OUTFITS/WHITERABBIT.png" />
+
+                    <img class="img-thumbnail" src="./Assets/OUTFITS/HERCULES.png" />
+                    <img class="img-thumbnail" src="./Assets/OUTFITS/MEGARA.png" />
+                    <img class="img-thumbnail" src="./Assets/OUTFITS/HADES.png" />
+
+                    <img class="img-thumbnail" src="./Assets/OUTFITS/RICK.png" />
+                    <img class="img-thumbnail" src="./Assets/OUTFITS/MORTY.png" />
+
+
+
+
+                </div>
+
+                <div id="PET" align=left>
+
+                    <img class="img-thumbnail" src="./Assets/BG/BASE.png" />
+                    <img class="img-thumbnail" src="./Assets/PETS/ROBOT.png" />
+                    <img class="img-thumbnail" src="./Assets/PETS/BEDCRAB.png" />
+                    <img class="img-thumbnail" src="./Assets/PETS/BEDCRAB2.png" />
+                    <img class="img-thumbnail" src="./Assets/PETS/BRAINSLUG.png" />
+                    <img class="img-thumbnail" src="./Assets/PETS/DOG.png" />
+                    <img class="img-thumbnail" src="./Assets/PETS/HAMSTER.png" />
+                    <img class="img-thumbnail" src="./Assets/PETS/STICKMAN.png" />
+                    <img class="img-thumbnail" src="./Assets/PETS/STICKWOMAN.png" />
+                    <img class="img-thumbnail" src="./Assets/PETS/UFO.png" />
+
+                    <img class="img-thumbnail" src="./Assets/PETS/MINI.png" />
+                    <img class="img-thumbnail" src="./Assets/PETS/MINI2.png" />
+                    <img class="img-thumbnail" src="./Assets/PETS/MINI3.png" />
+                    <img class="img-thumbnail" src="./Assets/PETS/MINI4.png" />
+                    <img class="img-thumbnail" src="./Assets/PETS/MINI5.png" />
+                    <img class="img-thumbnail" src="./Assets/PETS/MINI6.png" />
+                    <img class="img-thumbnail" src="./Assets/PETS/MINI7.png" />
+                    <img class="img-thumbnail" src="./Assets/PETS/MINI8.png" />
+                    <img class="img-thumbnail" src="./Assets/PETS/MINI9.png" />
+                    <img class="img-thumbnail" src="./Assets/PETS/MINI10.png" />
+                    <img class="img-thumbnail" src="./Assets/PETS/MINI11.png" />
+                    <img class="img-thumbnail" src="./Assets/PETS/MINI12.png" />
+
+                    <img class="img-thumbnail" src="./Assets/PETS/PEGASUS.png" />
+                    <img class="img-thumbnail" src="./Assets/PETS/PANICO.png" />
+                    <img class="img-thumbnail" src="./Assets/PETS/PENA.png" />
+
+                </div>
+                <div id="VOTE" align=left>
+                    <img class="img-thumbnail" src="./Assets/BG/BASE.png" />
+                    <img class="img-thumbnail" src="./Assets/VOTE/CREWMATE.png" />
+                    <img class="img-thumbnail" src="./Assets/VOTE/IMPOSTOR.png" />
+                    <img class="img-thumbnail" src="./Assets/VOTE/IVOTED.png" />
+                    <img class="img-thumbnail" src="./Assets/VOTE/defeat.png" />
+                    <img class="img-thumbnail" src="./Assets/VOTE/victory.png" />
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <h1>
+        <div align="center" style="color:#ffffff;">
+            아직은 테스트 중인 단계이므로 다운로드는 불가능합니다. 스크린샷을 찍어주세요.</span>
+            <br>
+            <br>
+            <br>
+            다운로드 기능도 곧 추가됩니다. <br><br>
+
+
+
+            <br>
+            <br>
+
+            <span class="confirm_selection">
+
+                어몽어스 캐릭터 만들기는 팬메이드이며 저작권은 <a href="http://www.innersloth.com/gameAmongUs.php" target="_blank"><span style="color:#8dffff">Innersloth</span></a> 이 소유하고 있습니다.
+                <br> Among US 어몽어스 캐릭터 만들기입니다.
+            </span>
+            <br>
+            <br>
+            <br>Want to display your ad on this page? Contact us! <a href="mailto:advertisement@amongusavatarmaker.com"> <span style="color:#8dffff">advertisement@amongusavatarmaker.com</span> </a>
+            <br>
+            <br>
+        </div>
+    </h1>
+
+    <ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" src="./Among Us Avatar Maker_files/ads.html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!0" data-load-complete="true"></iframe></ins></ins></ins>
+    <script>
+        $('#avatar').Cubexy();
+    </script>
+    <script>
+        $('#menu img').click(function () {
+            $('.tab-activo').removeClass('tab-activo');
+            $(this).addClass('tab-activo');
+            $('#avatar >div').hide();
+            $('#avatar >div#' + $(this).attr('data-tab')).show();
+        });
+        $('#avatar >div').hide();
+        $('#avatar >div#ojos').show();
+    </script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-74824848-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+</body>
+<script type="text/javascript">var infolinks_pid = 3289908; var infolinks_wsid = 0;</script>
+<script type="text/javascript" src="https://resources.infolinks.com/js/infolinks_main.js"></script>
+</html>
